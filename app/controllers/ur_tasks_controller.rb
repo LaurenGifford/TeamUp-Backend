@@ -1,0 +1,2 @@
+class UrTasksController < ApplicationController
+end

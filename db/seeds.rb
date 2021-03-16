@@ -15,6 +15,8 @@
 
 # Teams
 team1 = Team.create(department: "Marketing", leader: "Alvin")
+team2 = Team.create(department: "Design", leader: "Triss")
+team2 = Team.create(department: "Accounting", leader: "Jess")
 
 # Teammates
 alvin = Teammate.create(name: "Alvin", password: "123", points: "1000", team_id: team1.id)

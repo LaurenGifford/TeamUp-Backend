@@ -1,6 +1,7 @@
 class TeammateSerializer < ActiveModel::Serializer
-  attributes :id, :name, :points, :tasks, :projects
+  attributes :id, :name, :points, :projects
   has_one :team
+  has_many :tasks
 
   def projects
     self.object.tasks.map do |task|

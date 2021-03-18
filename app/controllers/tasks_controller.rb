@@ -13,15 +13,14 @@ class TasksController < ApplicationController
     def create
         date_str = params[:due_date]
         date_obj = Date.parse(date_str)
-        # byebug
         task = Task.create(title: params[:title], description: params[:description], due_date: date_obj, status: params[:status], project_id: params[:project_id])
         render json: task
     end
 
     def update
-        # byebug
         task = Task.find(params[:id])
         task.update(task_params)
+        # byebug
         render json: task
     end
 

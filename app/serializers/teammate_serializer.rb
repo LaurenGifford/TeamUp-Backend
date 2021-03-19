@@ -4,9 +4,10 @@ class TeammateSerializer < ActiveModel::Serializer
   has_many :tasks
 
   def projects
-    self.object.tasks.map do |task|
+    projects = self.object.tasks.map do |task|
       task.project
     end
+    projects.uniq
   end
 
   # def tasks

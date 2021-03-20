@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_184426) do
     t.string "title"
     t.text "description"
     t.datetime "due_date"
-    t.string "status"
+    t.boolean "completed"
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

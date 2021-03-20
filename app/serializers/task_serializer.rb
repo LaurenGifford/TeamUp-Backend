@@ -1,6 +1,5 @@
 class TaskSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :due_date, :status, :project, :priority, :teammates
-  # has_one :project
+  attributes :id, :title, :description, :due_date, :completed, :project, :priority, :teammates, :ur_tasks
 
   def priority
     self.object.project.priority

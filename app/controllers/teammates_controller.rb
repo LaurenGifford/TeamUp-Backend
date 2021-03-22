@@ -18,12 +18,8 @@ class TeammatesController < ApplicationController
     end
 
     def create
-        teammate = Teammate.create(
-          name: params[:name],
-          password: params[:password],
-          points: params[:points],
-          team_id: params[:team_id]
-        )
+      # byebug
+        teammate = Teammate.create(name: params[:name], password: params[:password], points: params[:points], team_id: params[:team_id])
     
         if teammate.valid?
           token = encode_token({ teammate_id: teammate.id })
@@ -55,7 +51,8 @@ class TeammatesController < ApplicationController
         payload = get_google_token_payload
         if payload
           # find/create user from payload (this will be a new method in the User model)
-          teammate = Teammate.from_google_signin(payload)
+          teammate = Teammate.from_google_signin(payload, params)
+          # byebug
           if teammate
             # save teammate_id in token so we can use it in future requests
             token = encode_token({ teammate_id: teammate.id })
@@ -85,7 +82,7 @@ class TeammatesController < ApplicationController
     
             # check the token_id and return the payload
             # make sure your .env file has a matching key
-            validator.check(token_id, ENV["GOOGLE_OAUTH_CLIENT_ID"])
+            validator.check(token_id, ENV["GOOGLE_OAUTH_CLIENT_ID_2"])
           rescue GoogleIDToken::ValidationError => e
             p "Cannot validate: #{e}"
           end

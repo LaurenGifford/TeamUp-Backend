@@ -28,10 +28,10 @@ pat = Teammate.create(name: "Pat", password: "123", points: "20", team_id: team1
 
 
 # Projects
-website = Project.create(title: "Launch New Website", priority: 6, team_id: team1.id)
-ad = Project.create(title: "Create Add Campaign", priority: 3, team_id: team1.id)
-commercial = Project.create(title: "Plan a Commercial", priority: 4, team_id: team1.id)
-survey = Project.create(title: "Customer Feedback", priority: 8, team_id: team1.id)
+website = Project.create(title: "Launch New Website", priority: 6, notes: 'Design and build a new website for all of our company information.', team_id: team1.id)
+ad = Project.create(title: "Create Add Campaign", priority: 3, notes: 'We are rolling out a new line of products and need to advertise them.', team_id: team1.id)
+commercial = Project.create(title: "Plan a Commercial", priority: 4, notes: 'Create Superbowl commercial for new product line.', team_id: team1.id)
+survey = Project.create(title: "Customer Feedback", priority: 8, notes: 'We need Customer feedback regarding our latest products.', team_id: team1.id)
 
 # Tasks
 t1 = Task.create(title: "Hire Designer", description: "Get someone with an awesome portfolio who can make this site great!", due_date: DateTime.new(2021,7,11), completed: false, project_id: website.id)
@@ -50,13 +50,14 @@ UrTask.create(teammate_id: alvin.id, task_id: t2.id)
 UrTask.create(teammate_id: alvin.id, task_id: t6.id)
 UrTask.create(teammate_id: alvin.id, task_id: t7.id)
 UrTask.create(teammate_id: alvin.id, task_id: t5.id)
-UrTask.create(teammate_id: alvin.id, task_id: t3.id)
-UrTask.create(teammate_id: jess.id, task_id: t2.id)
 UrTask.create(teammate_id: jess.id, task_id: t6.id)
 UrTask.create(teammate_id: triss.id, task_id: t3.id)
 UrTask.create(teammate_id: dave.id, task_id: t4.id)
 UrTask.create(teammate_id: abby.id, task_id: t8.id)
-UrTask.create(teammate_id: pat.id, task_id: t5.id)
+UrTask.create(teammate_id: abby.id, task_id: t1.id)
+UrTask.create(teammate_id: dave.id, task_id: t5.id)
+UrTask.create(teammate_id: pat.id, task_id: t2.id)
+
 
 
 puts 'seeded 🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱seeded'

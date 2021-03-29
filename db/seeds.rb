@@ -15,7 +15,7 @@
 
 # Teams
 team1 = Team.create(department: "Marketing", leader: "Alvin")
-team2 = Team.create(department: "Design", leader: "Triss")
+team2 = Team.create(department: "Engineering", leader: "Triss")
 team2 = Team.create(department: "Accounting", leader: "Jess")
 
 # Teammates
@@ -34,15 +34,15 @@ commercial = Project.create(title: "Plan a Commercial", priority: 4, notes: 'Cre
 survey = Project.create(title: "Customer Feedback", priority: 8, notes: 'We need Customer feedback regarding our latest products.', team_id: team1.id)
 
 # Tasks
-t1 = Task.create(title: "Hire Designer", description: "Get someone with an awesome portfolio who can make this site great!", due_date: DateTime.new(2021,7,11), completed: false, project_id: website.id)
+t1 = Task.create(title: "Hire Designer", description: "Get someone with an awesome portfolio who can make this site great!", due_date: DateTime.new(2021,5,11), completed: false, project_id: website.id)
 t2 = Task.create(title: "Hire Engineer", description: "We need a Rails backend and a React frontend, choose accordingly.", due_date: DateTime.new(2021,4,12), completed: false, project_id: website.id)
-t3 = Task.create(title: "Mockup", description: "Draw out what the site should look like.", due_date: DateTime.new(2021,8,1), completed: true, project_id: website.id)
-t4 = Task.create(title: "Promotional Topic", description: "Brainstorm to plan what we should promote.", due_date: DateTime.new(2021,4,14), completed: false, project_id: ad.id)
-t5 = Task.create(title: "Scout locations", description: "Find a site to film commercial.", due_date: DateTime.new(2021,11,18), completed: false, project_id: commercial.id)
-t6 = Task.create(title: "Film", description: "Shoot the commercial.", due_date: DateTime.new(2021,6,17), completed: false, project_id: commercial.id)
-t7 = Task.create(title: "Plan Questions", description: "Write a list of questions to include in the survey.", due_date: DateTime.new(2021,5,6), completed: false, project_id: survey.id)
-t8 = Task.create(title: "Create Survey", description: "Enter approved questions into survey sheet.", due_date: DateTime.new(2021,6,1), completed: false, project_id: website.id)
-t9 = Task.create(title: "Distribute", description: "Send survey to recent customers.", due_date: DateTime.new(2021,3,21), completed: false, project_id: survey.id)
+t3 = Task.create(title: "Mockup", description: "Draw out what the site should look like.", due_date: DateTime.new(2021,5,1), completed: true, project_id: website.id)
+t4 = Task.create(title: "Promotional Topic", description: "Brainstorm to plan what we should promote.", due_date: DateTime.new(2021,4,2), completed: false, project_id: ad.id)
+t5 = Task.create(title: "Scout locations", description: "Find a site to film commercial.", due_date: DateTime.new(2021,4,8), completed: false, project_id: commercial.id)
+t6 = Task.create(title: "Film", description: "Shoot the commercial.", due_date: DateTime.new(2021,4,17), completed: false, project_id: commercial.id)
+t7 = Task.create(title: "Plan Questions", description: "Write a list of questions to include in the survey.", due_date: DateTime.new(2021,4,6), completed: false, project_id: survey.id)
+t8 = Task.create(title: "Create Survey", description: "Enter approved questions into survey sheet.", due_date: DateTime.new(2021,4,1), completed: false, project_id: website.id)
+t9 = Task.create(title: "Distribute", description: "Send survey to recent customers.", due_date: DateTime.new(2021,3,31), completed: false, project_id: survey.id)
 
 # UrTasks
 UrTask.create(teammate_id: alvin.id, task_id: t1.id)

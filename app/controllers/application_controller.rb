@@ -10,14 +10,8 @@ class ApplicationController < ActionController::API
     end
   
     def authenticate
-      # JWT.decode will throw an error if decoding doesn't succeed
-      # so we need to handle the error so our app doesn't crash
       begin
-        # decode token using JWT library
         payload = decode_token(get_auth_token)
-  
-        # get the user_id from the decoded token and use it to
-        # set an instance variable for the current user
         set_current_user(payload["teammate_id"])
       rescue
         render json: { error: "Invalid Request" }, status: :unauthorized

@@ -37,8 +37,9 @@ class TeammatesController < ApplicationController
           token = encode_token({ teammate_id: teammate.id })
           render json: { teammate: TeammateSerializer.new(teammate), token: token }
         else
-          render json: { error: "Invalid username or password" }, status: :unauthorized
+          render json: { error: "Invalid username or password. You may need to signup." }, status: :unauthorized
         end
+        # byebug
     end
     
       # before_action :authenticate
@@ -48,19 +49,21 @@ class TeammatesController < ApplicationController
     
 
     def google_login
-      # byebug
-        payload = get_google_token_payload
-        if payload
-          # find/create user from payload (this will be a new method in the User model)
-          teammate = Teammate.from_google_signin(payload, params)
+      payload = get_google_token_payload
+      if payload
+        # find/create user from payload (this will be a new method in the User model)
+        teammate = Teammate.from_google_signin(payload, params)
+        # byebug
+        if teammate
+          # save teammate_id in token so we can use it in future requests
+          token = encode_token({ teammate_id: teammate.id })
+          # send token and teammate in response
           # byebug
-          if teammate
-            # save teammate_id in token so we can use it in future requests
-            token = encode_token({ teammate_id: teammate.id })
-            # send token and teammate in response
-            render json: { teammate: TeammateSerializer.new(teammate), token: token }
+          render json: { teammate: TeammateSerializer.new(teammate), token: token }
             return
           end
+        else
+          render json: { error: "Invalid username or password. You may need to signup." }, status: :unauthorized
         end
             # for invalid requests, send error messages to the front end
         render json: { message: "Could not log in" }, status: :unauthorized

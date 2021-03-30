@@ -21,6 +21,12 @@ class ProjectsController < ApplicationController
         render json: project
     end
 
+    def destroy
+        # byebug
+        project = Project.find(params[:id])
+        project.destroy
+    end
+
     private
 
     def project_params

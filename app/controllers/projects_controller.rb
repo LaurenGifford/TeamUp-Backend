@@ -24,6 +24,12 @@ class ProjectsController < ApplicationController
     def destroy
         # byebug
         project = Project.find(params[:id])
+        project.tasks.each do |task|
+            task.ur_tasks.each do |ur_task|
+                ur_task.destroy
+            end
+            task.destroy
+        end
         project.destroy
     end
 

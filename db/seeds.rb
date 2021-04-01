@@ -1,16 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# Team.destroy_all
-# Teammate.destroy_all
-# Project.destroy_all
-# Task.destroy_all
-# UrTask.destroy_all
 
 
 # Teams
@@ -56,20 +47,4 @@ t15 = Task.create(title: "Design interface", description: "This can be a wirefra
 t15 = Task.create(title: "Test users", description: "Invite employees to beta test", due_date: DateTime.new(2021,4,17), completed: false, project_id: chat.id)
 
 
-# UrTasks
-# UrTask.create(teammate_id: alvin.id, task_id: t1.id)
-# UrTask.create(teammate_id: alvin.id, task_id: t2.id)
-# UrTask.create(teammate_id: alvin.id, task_id: t6.id)
-# UrTask.create(teammate_id: alvin.id, task_id: t7.id)
-# UrTask.create(teammate_id: alvin.id, task_id: t5.id)
-# UrTask.create(teammate_id: jess.id, task_id: t6.id)
-# UrTask.create(teammate_id: triss.id, task_id: t3.id)
-# UrTask.create(teammate_id: dave.id, task_id: t4.id)
-# UrTask.create(teammate_id: abby.id, task_id: t8.id)
-# UrTask.create(teammate_id: abby.id, task_id: t1.id)
-# UrTask.create(teammate_id: dave.id, task_id: t5.id)
-# UrTask.create(teammate_id: pat.id, task_id: t2.id)
-
-
-
-puts 'seeded 🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱seeded'
+puts 'seeded 🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱 seeded'

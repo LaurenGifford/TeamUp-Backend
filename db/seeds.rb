@@ -19,12 +19,12 @@ team2 = Team.create(department: "Engineering", leader: "Triss")
 team3 = Team.create(department: "Accounting", leader: "Jess")
 
 # Teammates
-alvin = Teammate.create(name: "Alvin", password: "123", points: "1000", team_id: team1.id)
-jess = Teammate.create(name: "Jess", password: "123", points: "0", team_id: team1.id)
+alvin = Teammate.create(name: "Alvin", password: "123", points: "10000", team_id: team1.id)
+jess = Teammate.create(name: "Jess", password: "123", points: "100", team_id: team1.id)
 triss = Teammate.create(name: "Triss", password: "123", points: "300", team_id: team1.id)
 dave = Teammate.create(name: "Dave", password: "123", points: "2000", team_id: team2.id)
-abby = Teammate.create(name: "Abby", password: "123", points: "10000", team_id: team3.id)
-pat = Teammate.create(name: "Pat", password: "123", points: "20", team_id: team2.id)
+abby = Teammate.create(name: "Abby", password: "123", points: "1000", team_id: team3.id)
+pat = Teammate.create(name: "Pat", password: "123", points: "500", team_id: team2.id)
 
 
 # Projects
@@ -33,6 +33,7 @@ ad = Project.create(title: "Create Add Campaign", priority: 3, notes: 'We are ro
 commercial = Project.create(title: "Plan a Commercial", priority: 4, notes: 'Create Superbowl commercial for new product line.', team_id: team1.id)
 survey = Project.create(title: "Customer Feedback", priority: 8, notes: 'We need Customer feedback regarding our latest products.', team_id: team1.id)
 budget = Project.create(title: "Budget", priority: 8, notes: 'This company needs a budget', team_id: team3.id)
+chat = Project.create(title: "Launch Chat System", priority: 9, notes: "This will be like slack but for personalized for our company!", team_id: team2.id)
 
 # Tasks
 t1 = Task.create(title: "Hire Designer", description: "Get someone with an awesome portfolio who can make this site great!", due_date: DateTime.new(2021,5,11), completed: false, project_id: website.id)
@@ -42,14 +43,17 @@ t4 = Task.create(title: "Promotional Topic", description: "Brainstorm to plan wh
 t5 = Task.create(title: "Scout locations", description: "Find a site to film commercial.", due_date: DateTime.new(2021,4,8), completed: false, project_id: commercial.id)
 t6 = Task.create(title: "Film", description: "Shoot the commercial.", due_date: DateTime.new(2021,4,17), completed: false, project_id: commercial.id)
 t7 = Task.create(title: "Plan Questions", description: "Write a list of questions to include in the survey.", due_date: DateTime.new(2021,4,6), completed: false, project_id: survey.id)
-t8 = Task.create(title: "Create Survey", description: "Enter approved questions into survey sheet.", due_date: DateTime.new(2021,4,1), completed: false, project_id: survey.id)
-t9 = Task.create(title: "Distribute", description: "Send survey to recent customers.", due_date: DateTime.new(2021,3,31), completed: false, project_id: survey.id)
-t10 = Task.create(title: "Determine Overhead", description: "Look at balance sheets for fixed costs.", due_date: DateTime.new(2021,4,3), completed: false, project_id: budget.id)
+t8 = Task.create(title: "Create Survey", description: "Enter approved questions into survey sheet.", due_date: DateTime.new(2021,4,5), completed: false, project_id: survey.id)
+t9 = Task.create(title: "Distribute", description: "Send survey to recent customers.", due_date: DateTime.new(2021,4,1), completed: false, project_id: survey.id)
+t10 = Task.create(title: "Determine Overhead", description: "Look at balance sheets for fixed costs.", due_date: DateTime.new(2021,4,5), completed: false, project_id: budget.id)
 t11 = Task.create(title: "Determine Costs", description: "Consult balance sheets for daily expenditures.", due_date: DateTime.new(2021,4,2), completed: false, project_id: budget.id)
 t12 = Task.create(title: "Create balance sheet", description: "Use accoutning software to organize balances.", due_date: DateTime.new(2021,4,21), completed: false, project_id: budget.id)
 t13 = Task.create(title: "Create Artwork", description: "Get an artist to draw compelling art.", due_date: DateTime.new(2021,4,11), completed: false, project_id: ad.id)
 t14 = Task.create(title: "Write Copy", description: "Make it witty and concise.", due_date: DateTime.new(2021,4,3), completed: false, project_id: ad.id)
 t15 = Task.create(title: "Add assets", description: "Photos, links, videos, etc.", due_date: DateTime.new(2021,4,7), completed: false, project_id: website.id)
+t15 = Task.create(title: "Model database structure", description: "Create tables and schema", due_date: DateTime.new(2021,4,5), completed: false, project_id: chat.id)
+t15 = Task.create(title: "Design interface", description: "This can be a wireframe", due_date: DateTime.new(2021,4,2), completed: false, project_id: chat.id)
+t15 = Task.create(title: "Test users", description: "Invite employees to beta test", due_date: DateTime.new(2021,4,17), completed: false, project_id: chat.id)
 
 
 # UrTasks

@@ -53,12 +53,9 @@ class TeammatesController < ApplicationController
       if payload
         # find/create user from payload (this will be a new method in the User model)
         teammate = Teammate.from_google_signin(payload, params)
-        # byebug
         if teammate
           # save teammate_id in token so we can use it in future requests
           token = encode_token({ teammate_id: teammate.id })
-          # send token and teammate in response
-          # byebug
           render json: { teammate: TeammateSerializer.new(teammate), token: token }
             return
           end

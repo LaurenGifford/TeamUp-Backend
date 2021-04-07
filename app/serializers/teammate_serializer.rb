@@ -10,11 +10,5 @@ class TeammateSerializer < ActiveModel::Serializer
     projects.uniq
   end
 
-  # def tasks
-  #   self.object.tasks.each do |task| 
-  #     task["priority"] = task.project.priority
-  #   end
-  #   byebug
-  # end
 
 end

@@ -47,3 +47,6 @@ gem "google-id-token", "~> 1.4"
 gem "dotenv-rails", "~> 2.7"
 
 gem 'google-apis-calendar_v3', '~> 0.1'
+
+
+gem 'mimemagic', '0.3.7'

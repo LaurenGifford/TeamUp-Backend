@@ -50,3 +50,5 @@ gem 'google-apis-calendar_v3', '~> 0.1'
 
 
 gem 'mimemagic', '0.3.7'
+
+gem 'bundler', '~> 2.1', '>= 2.1.4'

@@ -18,9 +18,14 @@ class TeammatesController < ApplicationController
     end
 
     def create
-      teammate = Teammate.create(name: params[:name], password: params[:password], points: params[:points], team_id: params[:team_id])
-      
       # byebug
+      if params[:team_id]
+        team = params[:team_id]
+      else
+        team = Team.create(department: params[:team_name]).id
+      end
+      teammate = Teammate.create(name: params[:name], password: params[:password], points: params[:points], team_id: team)
+      
         if teammate.valid?
           token = encode_token({ teammate_id: teammate.id })
     
@@ -39,7 +44,6 @@ class TeammatesController < ApplicationController
         else
           render json: { error: "Invalid username or password. You may need to signup." }, status: :unauthorized
         end
-        # byebug
     end
     
       # before_action :authenticate

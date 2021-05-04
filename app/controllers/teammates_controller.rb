@@ -19,7 +19,7 @@ class TeammatesController < ApplicationController
 
     def create
       # byebug
-      if params[:team_id].is_a? Numeric
+      if params[:team_id] <= Team.all.length
         team = params[:team_id]
       else
         team_test = Team.create(department: params[:team_name])

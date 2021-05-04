@@ -19,10 +19,11 @@ class TeammatesController < ApplicationController
 
     def create
       # byebug
-      if params[:team_id]
+      if params[:team_id].is_a? Numeric
         team = params[:team_id]
       else
-        team = Team.create(department: params[:team_name]).id
+        team_test = Team.create(department: params[:team_name])
+        team = team_test.id
       end
       teammate = Teammate.create(name: params[:name], password: params[:password], points: params[:points], team_id: team)
       

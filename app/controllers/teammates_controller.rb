@@ -18,7 +18,6 @@ class TeammatesController < ApplicationController
     end
 
     def create
-      # byebug
       if params[:team_id] <= Team.all.length
         team = params[:team_id]
       else
